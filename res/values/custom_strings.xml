@@ -148,4 +148,7 @@
     <string name="tethering_allow_vpn_upstreams_title">Allow clients to use VPN</string>
     <string name="tethering_allow_vpn_upstreams_summary">Permit hotspot clients to use this device\u2019s VPN connection for upstream connectivity</string>
 
+    <!-- About phone, uptime. Deep sleep ratio since last reboot. -->
+    <string name="status_deep_sleep">(Deep sleep: %1$d%2$s)</string>
+
 </resources>
