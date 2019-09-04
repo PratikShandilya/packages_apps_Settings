@@ -151,4 +151,8 @@
     <!-- About phone, uptime. Deep sleep ratio since last reboot. -->
     <string name="status_deep_sleep">(Deep sleep: %1$d%2$s)</string>
 
+    <!-- Battery estimates -->
+    <string name="battery_estimates_title">Battery Estimate</string>
+    <string name="battery_estimates_summary">Show estimated remaining battery life in quick settings panel header (toggle display state to take effect)</string>
+
 </resources>
