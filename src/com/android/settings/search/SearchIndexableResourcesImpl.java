@@ -20,7 +20,7 @@ import android.support.annotation.VisibleForTesting;
 
 import com.android.settings.DateTimeSettings;
 import com.android.settings.DisplaySettings;
-//import com.android.settings.LegalSettings;
+import com.android.settings.LegalSettings;
 import com.android.settings.connecteddevice.AdvancedConnectedDeviceDashboardFragment;
 import com.android.settings.connecteddevice.PreviouslyConnectedDeviceDashboardFragment;
 import com.android.settings.connecteddevice.BluetoothDashboardFragment;
@@ -163,7 +163,7 @@ public class SearchIndexableResourcesImpl implements SearchIndexableResources {
         addIndex(PrintSettingsFragment.class);
         addIndex(DevelopmentSettingsDashboardFragment.class);
         addIndex(DeviceInfoSettings.class);
-        //addIndex(LegalSettings.class);
+        addIndex(LegalSettings.class);
         addIndex(SystemDashboardFragment.class);
         addIndex(ResetDashboardFragment.class);
         addIndex(StorageDashboardFragment.class);
