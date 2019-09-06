@@ -158,6 +158,11 @@
         android:summary="@string/status_bar_double_tap_to_sleep_summary"
         android:defaultValue="false" />
 
+    <!-- Theme category -->
+    <PreferenceCategory
+        android:key="themes_category_display"
+        android:title="@string/display_themes_title">
+
     <ListPreference
         android:key="systemui_theme"
         android:title="@string/device_theme"
@@ -189,6 +194,8 @@
         android:key="theme"
         android:title="@string/color_theme"
         android:summary="@string/summary_placeholder" />
+
+    </PreferenceCategory>
 
     <Preference
         android:key="vr_display_pref"
