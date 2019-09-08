@@ -158,6 +158,11 @@
         android:summary="@string/status_bar_double_tap_to_sleep_summary"
         android:defaultValue="false" />
 
+    <Preference
+        android:key="vr_display_pref"
+        android:title="@string/display_vr_pref_title"
+        android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
+
     <!-- Theme category -->
     <PreferenceCategory
         android:key="themes_category_display"
@@ -196,10 +201,5 @@
         android:summary="@string/summary_placeholder" />
 
     </PreferenceCategory>
-
-    <Preference
-        android:key="vr_display_pref"
-        android:title="@string/display_vr_pref_title"
-        android:fragment="com.android.settings.display.VrDisplayPreferencePicker" />
 
 </PreferenceScreen>
