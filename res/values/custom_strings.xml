@@ -161,4 +161,15 @@
     <string name="battery_estimates_title">Battery Estimate</string>
     <string name="battery_estimates_summary">Show estimated remaining battery life in quick settings panel header (toggle display state to take effect)</string>
 
+    <!-- Battery saving mode for Location - GPS will be disabled -->
+    <string name="location_mode_battery_saving_title">Battery saving mode</string>
+    <string name="location_mode_battery_saving_summary">Use only Wi\u2011Fi, Bluetooth, or mobile networks to determine location (less accurate)</string>
+
+    <!-- Lockscreen cover art filter -->
+    <string name="lockscreen_cover_filter_title">Lockscreen album art filter</string>
+    <string name="lockscreen_cover_filter_none">None</string>
+    <string name="lockscreen_cover_filter_grayscale">Grayscale</string>
+    <string name="lockscreen_cover_filter_blur">Blur</string>
+    <string name="lockscreen_cover_filter_grayblur">Grayscale and blur</string>
+
 </resources>
