@@ -174,6 +174,6 @@
 
     <!-- Pocket judge -->
     <string name="pocket_judge_title">Pocket detection</string>
-    <string name="pocket_judge_summary">Lock the screen and buttons when the device is in your pocket</string>
+    <string name="pocket_judge_summary">Lock the screen and buttons when the device is in pocket</string>
 
 </resources>

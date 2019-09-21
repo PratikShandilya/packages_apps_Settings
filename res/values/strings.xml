@@ -16,7 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- String for device theme category -->
-    <string name="display_themes_title">Themes</string>
+    <string name="display_themes_title">Theming</string>
 
     <!-- Strings for Dialog yes button -->
     <string name="yes">"Yes"</string>
