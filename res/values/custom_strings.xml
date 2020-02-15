@@ -126,7 +126,7 @@
     <string name="location_mode_battery_saving_summary">Use only Wi\u2011Fi, Bluetooth, or mobile networks to determine location (less accurate)</string>
 
     <!-- Lockscreen cover art filter -->
-    <string name="lockscreen_cover_filter_title">Lockscreen album art filter</string>
+    <string name="lockscreen_cover_filter_title">Media cover art filter</string>
     <string name="lockscreen_cover_filter_none">None</string>
     <string name="lockscreen_cover_filter_grayscale">Grayscale</string>
     <string name="lockscreen_cover_filter_blur">Blur</string>
