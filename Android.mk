@@ -41,6 +41,7 @@ LOCAL_JAVA_LIBRARIES := \
     ims-common
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
+    faceunlock_utils \
     androidx-constraintlayout_constraintlayout-solver \
     androidx.lifecycle_lifecycle-runtime \
     androidx.lifecycle_lifecycle-extensions \
@@ -50,8 +51,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     settings-log-bridge-protos-lite \
     contextualcards \
     settings-logtags \
-    zxing-core-1.7 \
-    faceunlock_utils
+    zxing-core-1.7
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
