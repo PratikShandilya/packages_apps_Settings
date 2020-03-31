@@ -121,6 +121,14 @@
         <item>org.pixelexperience.overlay.accent.red</item>
         <item>org.pixelexperience.overlay.accent.yellow</item>
         <item>org.pixelexperience.overlay.accent.teal</item>
+        <item>org.pixelexperience.overlay.accent.palepurple</item>
+        <item>org.pixelexperience.overlay.accent.paleblue</item>
+        <item>org.pixelexperience.overlay.accent.paleteal</item>
+        <item>org.pixelexperience.overlay.accent.limegreen</item>
+        <item>org.pixelexperience.overlay.accent.orchid</item>
+        <item>org.pixelexperience.overlay.accent.ocean</item>
+        <item>org.pixelexperience.overlay.accent.space</item>
+        <item>org.pixelexperience.overlay.accent.aquamarine</item>
     </string-array>
     <string-array name="allowed_themes_when_light" translatable="false">
         <item>org.pixelexperience.overlay.accent.black</item>

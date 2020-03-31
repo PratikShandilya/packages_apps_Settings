@@ -45,10 +45,10 @@ public class BuildNumberDialogController {
         
         StringBuilder sb = new StringBuilder();
         sb.append(BidiFormatter.getInstance().unicodeWrap(Build.DISPLAY));
-        String pixelExperienceVersion = BuildNumberPreferenceController.getPixelExperienceVersion();
-        if (!pixelExperienceVersion.equals("")){
+        String quantumVersion = BuildNumberPreferenceController.getquantumVersion();
+        if (!quantumVersion.equals("")){
             sb.append("\n");
-            sb.append(pixelExperienceVersion);
+            sb.append(quantumVersion);
         }
         sb.append("\n");
         sb.append(DeviceModelPreferenceController.getDeviceModel());

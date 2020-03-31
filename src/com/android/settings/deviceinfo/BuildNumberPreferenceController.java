@@ -87,10 +87,10 @@ public class BuildNumberPreferenceController extends AbstractPreferenceControlle
             try {
                 StringBuilder sb = new StringBuilder();
                 sb.append(BidiFormatter.getInstance().unicodeWrap(Build.DISPLAY));
-                String pixelExperienceVersion = getPixelExperienceVersion();
-                if (!pixelExperienceVersion.equals("")){
+                String quantumVersion = getquantumVersion();
+                if (!quantumVersion.equals("")){
                     sb.append("\n");
-                    sb.append(pixelExperienceVersion);
+                    sb.append(quantumVersion);
                 }
                 preference.setSummary(sb.toString());
                 preference.setEnabled(true);
@@ -100,10 +100,10 @@ public class BuildNumberPreferenceController extends AbstractPreferenceControlle
         }
     }
 
-    public static String getPixelExperienceVersion(){
-        String buildDate = SystemProperties.get("org.pixelexperience.build_date","");
-        String buildType = SystemProperties.get("org.pixelexperience.build_type","unofficial").toUpperCase();
-        return buildDate.equals("") ? "" : "Quantum-Mk15-" + buildDate + "-" + buildType;
+    public static String getquantumVersion(){
+        String buildDate = SystemProperties.get("org.quantum.build_date","");
+        String buildType = SystemProperties.get("org.quantum.build_type","unofficial").toUpperCase();
+        return buildDate.equals("") ? "" : "Quantum-Mk16-" + buildDate + "-" + buildType;
     }
 
     @Override
