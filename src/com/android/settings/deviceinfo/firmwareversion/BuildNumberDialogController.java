@@ -25,7 +25,6 @@ import com.android.settings.R;
 import android.os.SystemProperties;
 
 import com.android.settings.deviceinfo.BuildNumberPreferenceController;
-import com.android.settings.deviceinfo.DeviceModelPreferenceController;
 
 public class BuildNumberDialogController {
 
@@ -42,7 +41,6 @@ public class BuildNumberDialogController {
      * Updates the build number to the dialog.
      */
     public void initialize() {
-        
         StringBuilder sb = new StringBuilder();
         sb.append(BidiFormatter.getInstance().unicodeWrap(Build.DISPLAY));
         String quantumVersion = BuildNumberPreferenceController.getquantumVersion();
@@ -50,8 +48,6 @@ public class BuildNumberDialogController {
             sb.append("\n");
             sb.append(quantumVersion);
         }
-        sb.append("\n");
-        sb.append(DeviceModelPreferenceController.getDeviceModel());
         mDialog.setText(BUILD_NUMBER_VALUE_ID, sb.toString());
     }
 }

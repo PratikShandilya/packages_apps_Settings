@@ -112,10 +112,18 @@
         settings:keywords="@string/keywords_android_version"
         android:summary="@string/summary_placeholder"/>
 
+    <!-- Custom Version -->
+    <Preference
+        android:key="cust_version"
+        android:order="44"
+        android:title="@string/cust_version_title"
+        android:summary="@string/cust_version_summary"
+        android:selectable="false"/>
+
     <!--IP address -->
     <Preference
         android:key="wifi_ip_address"
-        android:order="44"
+        android:order="45"
         android:title="@string/wifi_ip_address"
         android:summary="@string/summary_placeholder"
         android:selectable="false"
@@ -124,7 +132,7 @@
     <!-- Wi-Fi MAC address -->
     <Preference
         android:key="wifi_mac_address"
-        android:order="45"
+        android:order="46"
         android:title="@string/status_wifi_mac_address"
         android:summary="@string/summary_placeholder"
         android:selectable="false"/>
@@ -132,7 +140,7 @@
     <!-- Bluetooth address -->
     <Preference
         android:key="bt_address"
-        android:order="46"
+        android:order="47"
         android:title="@string/status_bt_address"
         android:summary="@string/summary_placeholder"
         android:selectable="false"/>

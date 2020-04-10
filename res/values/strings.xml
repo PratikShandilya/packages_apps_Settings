@@ -18,6 +18,10 @@
     <!-- String for device theme category -->
     <string name="display_themes_title">Theming</string>
 
+    <!-- String for custom version category -->
+    <string name="cust_version_title">QUANTUM version</string>
+    <string name="cust_version_summary">Q-Mk16</string>
+
     <!-- Strings for Dialog yes button -->
     <string name="yes">"Yes"</string>
     <!-- Strings for Dialog no button -->
