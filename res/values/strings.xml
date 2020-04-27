@@ -19,8 +19,8 @@
     <string name="display_themes_title">Theming</string>
 
     <!-- String for custom version category -->
-    <string name="cust_version_title">QUANTUM version</string>
-    <string name="cust_version_summary">Q-Mk16</string>
+    <string name="cust_version_title">Quantum version</string>
+    <string name="cust_version_summary">Q-9.17</string>
 
     <!-- Strings for Dialog yes button -->
     <string name="yes">"Yes"</string>

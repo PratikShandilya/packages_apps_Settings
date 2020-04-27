@@ -102,7 +102,7 @@ public class BuildNumberPreferenceController extends AbstractPreferenceControlle
 
     public static String getquantumVersion(){
         String buildDate = SystemProperties.get("org.quantum.build_date","");
-        return buildDate.equals("") ? "" : "QUANTUM-" + buildDate;
+        return buildDate.equals("") ? "" : buildDate + "-QPP-9.17";
     }
 
     @Override
