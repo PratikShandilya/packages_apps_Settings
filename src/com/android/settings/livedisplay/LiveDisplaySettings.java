@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2015 The CyanogenMod Project
- *               2017-2019 The LineageOS Project
+ *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,7 @@
  */
 package com.android.settings.livedisplay;
 
+//import android.app.DialogFragment;
 import androidx.fragment.app.DialogFragment;
 import android.content.Context;
 import android.content.res.Resources;
@@ -60,8 +61,6 @@ import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_CO
 import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_DISPLAY_MODES;
 import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT;
 import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_READING_ENHANCEMENT;
-import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_DAY;
-import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_NIGHT;
 import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_OFF;
 import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
@@ -129,8 +128,6 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
         super.onCreate(savedInstanceState);
         final Resources res = getResources();
 
-        final boolean isNightDisplayAvailable =
-                ColorDisplayManager.isNightDisplayAvailable(getContext());
         mHardware = LineageHardwareManager.getInstance(getActivity());
         mLiveDisplayManager = LiveDisplayManager.getInstance(getActivity());
         mConfig = mLiveDisplayManager.getConfig();
@@ -152,28 +149,15 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
         mModeSummaries = res.getStringArray(
                 com.android.internal.R.array.live_display_summaries);
 
-        int[] removeIdx = null;
         // Remove outdoor mode from lists if there is no support
-        if (!mConfig.hasFeature(MODE_OUTDOOR)) {
-            removeIdx = ArrayUtils.appendInt(removeIdx,
-                    ArrayUtils.indexOf(mModeValues, String.valueOf(MODE_OUTDOOR)));
-        }
-
-        // Remove night display on HWC2
-        if (isNightDisplayAvailable) {
-            removeIdx = ArrayUtils.appendInt(removeIdx,
-                    ArrayUtils.indexOf(mModeValues, String.valueOf(MODE_DAY)));
-            removeIdx = ArrayUtils.appendInt(removeIdx,
-                    ArrayUtils.indexOf(mModeValues, String.valueOf(MODE_NIGHT)));
-        }
-
-        if (removeIdx != null) {
-            String[] entriesTemp = new String[mModeEntries.length - removeIdx.length];
-            String[] valuesTemp = new String[mModeValues.length - removeIdx.length];
-            String[] summariesTemp = new String[mModeSummaries.length - removeIdx.length];
+        if (!mConfig.hasFeature(LiveDisplayManager.MODE_OUTDOOR)) {
+            int idx = ArrayUtils.indexOf(mModeValues, String.valueOf(MODE_OUTDOOR));
+            String[] entriesTemp = new String[mModeEntries.length - 1];
+            String[] valuesTemp = new String[mModeValues.length - 1];
+            String[] summariesTemp = new String[mModeSummaries.length - 1];
             int j = 0;
             for (int i = 0; i < mModeEntries.length; i++) {
-                if (ArrayUtils.contains(removeIdx, i)) {
+                if (i == idx) {
                     continue;
                 }
                 entriesTemp[j] = mModeEntries[i];
@@ -190,11 +174,9 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
         mLiveDisplay.setEntryValues(mModeValues);
         mLiveDisplay.setOnPreferenceChangeListener(this);
 
-        mDisplayTemperature = findPreference(KEY_LIVE_DISPLAY_TEMPERATURE);
-        if (isNightDisplayAvailable) {
-            if (!mConfig.hasFeature(MODE_OUTDOOR)) {
-                liveDisplayPrefs.removePreference(mLiveDisplay);
-            }
+        mDisplayTemperature = (DisplayTemperature) findPreference(KEY_LIVE_DISPLAY_TEMPERATURE);
+        if (ColorDisplayManager.isNightDisplayAvailable(getContext())) {
+            liveDisplayPrefs.removePreference(mLiveDisplay);
             liveDisplayPrefs.removePreference(mDisplayTemperature);
         }
 
@@ -239,14 +221,14 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
 
         mPictureAdjustment = findPreference(KEY_PICTURE_ADJUSTMENT);
         if (advancedPrefs != null && mPictureAdjustment != null &&
-                    !mConfig.hasFeature(FEATURE_PICTURE_ADJUSTMENT)) {
+                    !mConfig.hasFeature(LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT)) {
             advancedPrefs.removePreference(mPictureAdjustment);
             mPictureAdjustment = null;
         }
 
         mDisplayColor = findPreference(KEY_DISPLAY_COLOR);
         if (advancedPrefs != null && mDisplayColor != null &&
-                !mConfig.hasFeature(FEATURE_COLOR_ADJUSTMENT)) {
+                !mConfig.hasFeature(LiveDisplayManager.FEATURE_COLOR_ADJUSTMENT)) {
             advancedPrefs.removePreference(mDisplayColor);
             mDisplayColor = null;
         }
@@ -332,6 +314,9 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
     }
 
     private void updateModeSummary() {
+        if (ColorDisplayManager.isNightDisplayAvailable(getContext())) {
+            return; // Do nothing if device has hwc2 support
+        }
 
         int mode = mLiveDisplayManager.getMode();
 
@@ -449,9 +434,7 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
                 result.add(KEY_LIVE_DISPLAY_READING_ENHANCEMENT);
             }
             if (ColorDisplayManager.isNightDisplayAvailable(context)) {
-                if (!config.hasFeature(MODE_OUTDOOR)) {
-                    result.add(KEY_LIVE_DISPLAY);
-                }
+                result.add(KEY_LIVE_DISPLAY);
                 result.add(KEY_LIVE_DISPLAY_TEMPERATURE);
             }
             return result;
