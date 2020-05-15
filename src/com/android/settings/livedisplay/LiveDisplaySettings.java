@@ -20,7 +20,6 @@ package com.android.settings.livedisplay;
 import androidx.fragment.app.DialogFragment;
 import android.content.Context;
 import android.content.res.Resources;
-import android.hardware.display.ColorDisplayManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -175,10 +174,6 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
         mLiveDisplay.setOnPreferenceChangeListener(this);
 
         mDisplayTemperature = (DisplayTemperature) findPreference(KEY_LIVE_DISPLAY_TEMPERATURE);
-        if (ColorDisplayManager.isNightDisplayAvailable(getContext())) {
-            liveDisplayPrefs.removePreference(mLiveDisplay);
-            liveDisplayPrefs.removePreference(mDisplayTemperature);
-        }
 
         mColorProfile = findPreference(KEY_LIVE_DISPLAY_COLOR_PROFILE);
         if (liveDisplayPrefs != null && mColorProfile != null
