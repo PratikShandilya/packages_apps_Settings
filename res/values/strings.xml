@@ -25,6 +25,10 @@
     <!-- Strings for Dialog deny button -->
     <string name="deny">Deny</string>
 
+    <!-- String for custom version category -->
+    <string name="cust_version_title">QUANTUM version</string>
+    <string name="cust_version_summary">QP-10.1</string>
+
     <!-- Device Info screen. Used for a status item's value when the proper value is not known -->
     <string name="device_info_default">Unknown</string>
     <!-- [CHAR LIMIT=NONE] Device Info screen. Countdown for user taps to enable development settings -->
