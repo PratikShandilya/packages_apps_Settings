@@ -105,4 +105,7 @@ Notifications may be delayed for these apps."</string>
     <!-- Battery light -->
     <string name="battery_light_title">Turn on the light when charging</string>
 
+    <!-- Search keywords -->
+    <string name="keywords_notification_log">notifications, notification log</string>
+
 </resources>
