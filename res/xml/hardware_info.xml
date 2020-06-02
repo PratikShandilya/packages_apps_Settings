@@ -39,11 +39,11 @@
         settings:enableCopying="true"/>
 
     <!-- Hardware revision -->
-<!--    <Preference
+    <Preference
         android:key="hardware_info_device_revision"
         android:title="@string/hardware_revision"
         android:summary="@string/summary_placeholder"
         settings:controller="com.android.settings.deviceinfo.hardwareinfo.HardwareRevisionPreferenceController"
-        settings:enableCopying="true"/> -->
+        settings:enableCopying="true"/>
 
 </PreferenceScreen>
