@@ -177,13 +177,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
         if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL) {
             if (disallowCenteredClock) {
                 mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
             } else {
                 mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_rtl);
-                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_rtl);
+                mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values);
             }
             mQuickPulldown.setEntries(R.array.status_bar_quick_qs_pulldown_entries_rtl);
-            mQuickPulldown.setEntryValues(R.array.status_bar_quick_qs_pulldown_values_rtl);
+            mQuickPulldown.setEntryValues(R.array.status_bar_quick_qs_pulldown_values);
         } else if (disallowCenteredClock) {
             mStatusBarClock.setEntries(R.array.status_bar_clock_position_entries_notch);
             mStatusBarClock.setEntryValues(R.array.status_bar_clock_position_values_notch);
@@ -228,6 +228,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment
 
     private void updateQuickPulldownSummary(int value) {
         String summary="";
+        if (getResources().getConfiguration().getLayoutDirection() == View.LAYOUT_DIRECTION_RTL){
+            if (value == PULLDOWN_DIR_LEFT) {
+                value = PULLDOWN_DIR_RIGHT;
+            }else if (value == PULLDOWN_DIR_RIGHT) {
+                value = PULLDOWN_DIR_LEFT;
+            }
+        }
         switch (value) {
             case PULLDOWN_DIR_NONE:
                 summary = getResources().getString(
