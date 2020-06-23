@@ -27,7 +27,7 @@
 
     <!-- String for custom version category -->
     <string name="cust_version_title">Quantum version</string>
-    <string name="cust_version_summary">QP-10.1</string>
+    <string name="cust_version_summary">Q-10.1</string>
 
     <!-- Device Info screen. Used for a status item's value when the proper value is not known -->
     <string name="device_info_default">Unknown</string>
