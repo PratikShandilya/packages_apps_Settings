@@ -63,16 +63,8 @@ public class FeatureFlagPreferenceControllerTest {
     }
 
     @Test
-    public void getAvailability_debug_available() {
-        ReflectionHelpers.setStaticField(Build.class, "IS_DEBUGGABLE", true);
+    public void getAvailability_available() {
         assertThat(mController.getAvailabilityStatus()).isEqualTo(AVAILABLE);
-    }
-
-
-    @Test
-    public void getAvailability_user_unavailable() {
-        ReflectionHelpers.setStaticField(Build.class, "IS_DEBUGGABLE", false);
-        assertThat(mController.getAvailabilityStatus()).isEqualTo(UNSUPPORTED_ON_DEVICE);
     }
 
     @Test
