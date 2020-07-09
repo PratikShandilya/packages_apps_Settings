@@ -53,9 +53,6 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
     zxing-core-1.7 \
     faceunlock_utils
 
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
-    packages/apps/TouchGestures/res
-
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
 ifneq ($(INCREMENTAL_BUILDS),)
