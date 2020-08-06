@@ -96,7 +96,6 @@ public class DisplaySettings extends DashboardFragment {
         controllers.add(new ShowOperatorNamePreferenceController(context));
         controllers.add(new ThemePreferenceController(context));
         controllers.add(new BrightnessLevelPreferenceController(context, lifecycle));
-        controllers.add(new RefreshRatePreferenceController(context));
         return controllers;
     }
 
