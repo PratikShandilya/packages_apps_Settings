@@ -294,8 +294,8 @@
     <string name="translucent_lockscreen_notifications_bg_title">قائمة التنبيهات ذات خلفية شفافة</string>
     <!-- Search keywords -->
     <string name="keywords_notification_log">التنبيهات، سجل التنبيهات</string>
-    <!-- Heads-up -->
-    <!-- Pocket mode -->
+    <string name="heads_up_notifications_enabled_title">إشعارات منبثقة</string>
+    <string name="heads_up_notifications_enabled_summary">عرض الإشعارات ذات الأولوية في نافذة عائمة صغيرة</string>
     <string name="proximity_wake_title">منع الاستيقاظ بالخطأ</string>
     <string name="proximity_wake_summary">التحقق من مستشعر القرب قبل إيقاظ الشاشة</string>
 </resources>
