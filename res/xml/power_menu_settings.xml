@@ -3,6 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:key="power_menu"
     android:title="@string/power_menu_title">
+ 
+    <com.android.settings.custom.preference.SystemSettingSwitchPreference
+        android:key="advanced_reboot"
+        android:title="@string/advanced_reboot_title"
+        android:summary="@string/advanced_reboot_summary"
+        android:defaultValue="false" />
+
+<PreferenceCategory
+         android:key="power_menu_items_checkbox">
 
     <CheckBoxPreference
         android:key="screenshot"
@@ -24,4 +33,6 @@
         android:key="lockdown"
         android:title="@string/power_menu_lockdown_title"
         android:defaultValue="false" />
+</PreferenceCategory>
+
 </PreferenceScreen>
